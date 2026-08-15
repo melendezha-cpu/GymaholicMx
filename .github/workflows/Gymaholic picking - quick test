@@ -1,0 +1,11 @@
+  - name: Create simple output
+    run: |
+      echo "PRUEBA: Gymaholic picking - salida de test" > picking_output.txt
+      echo "Fecha: $(date)" >> picking_output.txt
+      cat picking_output.txt
+
+  - name: Upload picking output
+    uses: actions/upload-artifact@v4
+    with:
+      name: picking-output
+      path: picking_output.txt
