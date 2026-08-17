@@ -1,11 +1,22 @@
-  - name: Create simple output
-    run: |
-      echo "PRUEBA: Gymaholic picking - salida de test" > picking_output.txt
-      echo "Fecha: $(date)" >> picking_output.txt
-      cat picking_output.txt
+name: Gymaholic picking - quick test
+on:
+  workflow_dispatch: {}
 
-  - name: Upload picking output
-    uses: actions/upload-artifact@v4
-    with:
-      name: picking-output
-      path: picking_output.txt
+jobs:
+  quick-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Create simple output
+        run: |
+          echo "PRUEBA: Gymaholic picking - salida de test" > picking_output.txt
+          echo "Fecha: $(date)" >> picking_output.txt
+          cat picking_output.txt
+
+      - name: Upload picking output
+        uses: actions/upload-artifact@v4
+        with:
+          name: picking-output
+          path: picking_output.txt
