@@ -1,9 +1,3 @@
-name: Gymaholic picking - quick test
-
-on: workflow_dispatch: {}
-
-jobs: quick-test: runs-on: ubuntu-latest steps: - name: Checkout repo uses: actions/checkout@v4
-
   - name: Create simple output
     run: |
       echo "PRUEBA: Gymaholic picking - salida de test" > picking_output.txt
